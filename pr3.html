@@ -45,54 +45,76 @@
 								<!-- Main Content -->
 									<section>
 										<header>
-											<h2>Project 3</h2>
-											<h3>The title of project 3</h3>
+											<h2>Project 3 - 3D printing and scanning</h2>
+										</header>
+                                        <header>
+											<h3>Project description</h3>
 										</header>
 										<p>
-											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam metus, congue
-											vel suscipit ut, dignissim non risus. Vestibulum ante est, fringilla nec placerat
-											eu, vestibulum vitae diam. Integer eget egestas eros. Duis enim erat, mollis quis
-											lacinia eget, blandit nec ipsum. Donec vitae turpis ipsum. Aliquam mauris libero,
-											sagittis in eleifend at, mattis imperdiet velit. Donec urna risus, rutrum molestie
-											varius ac, lacinia sit amet augue. Nam ultrices elementum eros.
+											The project is two fold, 3D print something and 3D scan something. The 3D printed part should not be readily machinable by traditional subtractive manufacture.
 										</p>
+                                        <header>
+											<h3>Part 1 - 3D printing</h3>
+										</header>
 										<p>
-											Sed faucibus viverra ligula, non varius magna semper vitae. Donec eu justo ut ipsum
-											hendrerit congue nec eu risus. Cum sociis natoque penatibus et magnis dis parturient
-											montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet, consectetur adipiscing
-											egestas tempus. Cras convallis odio sit amet risus convallis porttitor. Integer
-											vehicula fermentum ligula at pretium. Suspendisse semper iaculis eros, eu aliquam
-											justo imperdiet vel. Proin nec dictum mi. Duis commodo enim non tellus interdum
-											elit. Suspendisse fermentum adipiscing nisi, a tempor libero malesuada at. Morbi
-											lacinia dui adipiscing risus eleifend tincidunt. Proin eu mauris eu tellus eleifend
-											hendrerit.
+											My idea for the project originally going to involved making complicated left and right handles that could be used like a bark scraper with a stanley knife blade. Howver due to time constrains and the complexity and delays that the 2D cutting project posed I decided to simplify this one.
+                                            </p>
+                                        <p>
+                                            I realized that to meet the requirement of the part not being machinable by subtractive manufacture I could use different infil densities to create something that is otherwise not possible with a homogenious material. From there I quickly arrived at the idea of a weigthted dice. Another idea I had was some sort of desk orniment that looks like it should tip over but doesn’t due to different infil densities keeping it balanced, perhaps that’s an idea someone else can take. For this project, I’ll go with the weighted dice.
 										</p>
+                                        <header>
+											<h3>CAD</h3>
+										</header>
 										<p>
-											Mauris sit amet tellus urna. In facilisis, tortor vitae ultricies egestas, odio
-											mi rhoncus arcu, quis euismod felis felis et velit. Mauris varius consectetur erat
-											egestas tempus. Cras convallis odio sit amet risus convallis porttitor. Integer
-											vehicula fermentum ligula at pretium. Suspendisse semper iaculis eros, eu aliquam
-											justo imperdiet vel. Proin nec dictum mi. Duis commodo enim non tellus interdum
-											iaculis. Phasellus ultrices diam sit amet orci lacinia sed consequat dui auctor.
+											I drew the dice part after making the drawings for project 2 so I seized the opportinity to parametrize the drawing. The final version has 4 driving dimensions, the cube edge length, the indent radius, the indent offset from surface and the corner radius. All the CAD work was done in Inventor.
 										</p>
-										<p>
-											Sed faucibus viverra ligula, non varius magna semper vitae. Donec eu justo ut ipsum
-											hendrerit congue nec eu risus. Cum sociis natoque penatibus et magnis dis parturient
-											montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet, consectetur adipiscing
-											egestas tempus. Cras convallis odio sit amet risus convallis porttitor. Integer
-											vehicula fermentum ligula at pretium. Suspendisse semper iaculis eros, eu aliquam
-											justo imperdiet vel. Proin nec dictum mi. Duis commodo enim non tellus interdum
-											elit. Suspendisse fermentum adipiscing nisi, a tempor libero malesuada at. Morbi
-											lacinia dui adipiscing risus eleifend tincidunt. Proin eu mauris eu tellus eleifend
-											hendrerit.
+                                        <body>
+                                                <img src="./images/dice%20cad.jpg" alt= "pic" width= "1000">
+                                            </body>
+                                        <p>
+											As implied above, I made the indents by creating a plane a defined distance above the surface and revolve cut the circle from that plane to create the indent. The remainder of the drawing was trivial.
 										</p>
+                                        
+                                        <header>
+											<h3>Exporting and print configuration</h3>
+										</header>
 										<p>
-											Mauris sit amet tellus urna. In facilisis, tortor vitae ultricies egestas, odio
-											mi rhoncus arcu, quis euismod felis felis et velit. Mauris varius consectetur erat
-											egestas tempus. Cras convallis odio sit amet risus convallis porttitor. Integer
-											vehicula fermentum ligula at pretium. Suspendisse semper iaculis eros, eu aliquam
-											justo imperdiet vel. Proin nec dictum mi. Duis commodo enim non tellus interdum
-											iaculis. Phasellus ultrices diam sit amet orci lacinia sed consequat dui auctor.
+											To be able to print I need to get the model into prusa slicer, which requires that the model is in some sort of standard format. I used the .STEP format but some other formats can be used as well. For this print the most appropriate filament to use was PLA since I did not need any of the properties of PETG and PLA is more environmentally friendly.
+                                            Once the model was in the Prusa slicer, I copied the dice so that I could have a control dice that wasn’t biased. With the help of a <a href="https://www.youtube.com/watch?v=ii5UrA4oAdU">youtube tutorial</a> I found, I created a different infil region for one of the dice. I put 70% infil density in on the #1 side of one dice to increase the weight only on that side. The infil density of all other regions was 20%.
+										</p>
+                                        <body>
+                                                <img src="./images/dice%20region.png" alt= "dice regions" height= "500">
+                                            </body>
+                                        <p>
+											Here we can see the region defined for different infill.
+										</p>
+                                        
+                                        <body>
+                                                <img src="./images/dice%20infill.png" alt= "dice infill" height= "520">
+                                            </body>
+                                        <p>
+											Here we can see the infil pattern with the different density.
+										</p>
+                                        
+                                        <header>
+											<h3>Results and testing</h3>
+										</header>
+										<p>
+											The print was successful on the first try, using the default settings for the Prusa i3 MK3 printer and took just under an hour. There was no visual difference between the two dice. I asked several people to try to find the difference between the non-weighted and weighted dice and no one was able to spot any difference without hints about weight. There is a very subtle difference in overall weight of the two dice. I could have printed the non-weighted dice with a higher infil density to get the weights closer but I didn’t think of that at the time. Here is a picture of the dice ontop of my cat, Guðbrandur Biskup.
+                                        </p>
+                                        
+                                            <body>
+                                                <img src="./images/dice%20on%20cat.jpg" alt= "dice infill" height= "600">
+                                            </body>
+                                        
+                                        <p>
+                                            I threw each dice 120 times to get a good average result for each. Consider that the average result of a fair dice is exactly 3.5. It seems counterintuitive but the average of 1, 2, 3, 4, 5, 6 is indeed 3.5. The average result across 120 throws were 4.05 for one dice, and 3.59 for the other. I’ll let you guess which one feels slightly heavier.
+                                            
+                                            
+                                            This result is interesting since the supposedly non-weighted dice is in fact not fair. This could be because of the very subtle effect of the different number of indents on the surface of each side. In theory, even on a fair dice, the #1 side is heaviest, and the #6 side is lightest, which should slightly shift the average higher than 3.5. Another factor that could be influencing the results is that the infill pattern may not have the same line density in all directions. If the vertical, or Z-axis, line density of higher, this in theory should slightly increase the probability of rolling a 3 or 4. Rolling more 3 and 4 should not affect the average however so I am unsure if this is the reason for the average being higher than 3.5 for the non-weighted dice.
+                                            
+                                            Overall the project was a success, I created a weighted dice that can’t be readily made using subtractive manufacture and it rolls an average just over 4.
+
 										</p>
 									</section>
 
@@ -101,21 +123,7 @@
 					</div>
 				</section>
 
-			<!-- Footer -->
-				<section id="footer">
-					<div class="container">
-						<div class="row">
-							<div class="col-8 col-12-medium">
 
-							</div>
-							<div class="col-4 col-12-medium imp-medium">
-
-							
-
-							</div>
-						</div>
-					</div>
-				</section>
 
 			<!-- Copyright -->
 				<div id="copyright">
